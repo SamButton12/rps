@@ -1,26 +1,23 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-
-
+require_relative 'lib/player.rb'
 
 class Rps < Sinatra::Base
-  enable :sessions
 
   configure :development do
     register Sinatra::Reloader
   end
 
   get '/' do
-     erb :index
+    erb :index
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    $player_name = params[:name]
     redirect '/play'                            
   end
 
   get '/play' do
-    @name = session[:name]
     erb :play
   end
 

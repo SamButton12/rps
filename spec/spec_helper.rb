@@ -20,6 +20,7 @@ require 'capybara'
 require 'sinatra'
 require 'webrick'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'features/web_helpers.rb'
 
 ENV['RACK_ENV'] = 'test'
 
