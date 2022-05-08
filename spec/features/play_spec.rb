@@ -10,6 +10,7 @@ feature 'playing a game' do
     sign_in_and_play
     expect(page).to have_content 'Rock'
     expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    expect(page).to have_content'Scissors'
   end
+
 end
